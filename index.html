@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenHarvest</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <load src="./partials/header.html"></load>
+
+  <main id="top">
+    <load src="./partials/hero.html"></load>
+    <load src="./partials/how-is-works.html"></load>
+    <load src="./partials/advertisement.html"></load>
+    <load src="./partials/vegetables.html"></load>
+    <load src="./partials/review.html"></load>
+    <load src="./partials/your-order.html"></load>
+  </main>
+
+  <load src="./partials/footer.html"></load>
+
+  <!-- Fallback templates for local file:// open -->
+  <template id="tpl-header">
+    <!-- Header -->
+    <header class="gh-header" id="gh-header">
+      <div class="gh-header__bar">
+        <a href="#" class="gh-logo" aria-label="Green Harvest home">
+          <img class="gh-logo__img gh-logo__img--desktop" src="./img/logo-desktop.svg" alt="Green Harvest" decoding="async" />
+          <img class="gh-logo__img gh-logo__img--mobile" src="./img/logo-mobile.svg" alt="Green Harvest" decoding="async" />
+        </a>
+
+        <div class="gh-header__desktop-group">
+          <nav class="gh-nav gh-nav--desktop" aria-label="Main navigation">
+            <a class="gh-nav__item" href="#how-it-works">How It Works</a>
+            <a class="gh-nav__item" href="#vegetables">Vegetables</a>
+            <a class="gh-nav__item" href="#reviews">Reviews</a>
+          </nav>
+          <a class="gh-cta" href="#order">Shop now</a>
+        </div>
+
+        <button
+          class="gh-burger"
+          id="gh-menu-open"
+          type="button"
+          aria-expanded="false"
+          aria-controls="gh-menu-tablet gh-menu-mobile"
+          aria-label="Open menu"
+        >
+          <span class="gh-burger__line"></span>
+        </button>
+      </div>
+
+      <div class="gh-backdrop" id="gh-backdrop" hidden></div>
+
+      <aside class="gh-tablet-menu" id="gh-menu-tablet" aria-hidden="true">
+        <div class="gh-tablet-menu__header">
+          <button class="gh-close gh-close--tablet" id="gh-menu-close-tablet" type="button" aria-label="Close menu">
+            <span></span>
+          </button>
+        </div>
+
+        <nav class="gh-nav gh-nav--drawer" aria-label="Main navigation">
+          <a class="gh-nav__item" href="#how-it-works">How It Works</a>
+          <a class="gh-nav__item" href="#vegetables">Vegetables</a>
+          <a class="gh-nav__item" href="#reviews">Reviews</a>
+        </nav>
+
+        <a class="gh-cta gh-cta--drawer" href="#order">Shop now</a>
+      </aside>
+
+      <div class="gh-mobile-menu" id="gh-menu-mobile" aria-hidden="true">
+        <button class="gh-close gh-close--mobile" id="gh-menu-close-mobile" type="button" aria-label="Close menu">
+          <span></span>
+        </button>
+
+        <nav class="gh-nav gh-nav--drawer gh-nav--mobile" aria-label="Main navigation">
+          <a class="gh-nav__item" href="#how-it-works">How It Works</a>
+          <a class="gh-nav__item" href="#vegetables">Vegetables</a>
+          <a class="gh-nav__item" href="#reviews">Reviews</a>
+        </nav>
+
+        <a class="gh-cta gh-cta--drawer gh-cta--mobile" href="#order">Shop now</a>
+      </div>
+    </header>
+  </template>
+  <template id="tpl-hero">
+      <!-- Hero -->
+      <section class="hero section-green" id="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="heading-xl">Organic vegetables to your diet today!</h1>
+            <p class="body-lg">
+              Our expertly curated vegetable baskets are made with the freshest, highest quality vegetables available.
+              Fresh Harvest Box has got you covered. Fresh, high-quality vegetables in expertly curated vegetable baskets
+              delivered to you.
+            </p>
+          </div>
+          <div class="hero__image" role="img" aria-label="Fresh vegetables"></div>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-how-is-works">
+      <!-- How it works -->
+      <section class="how" id="how-it-works">
+        <div class="how__image-wrap">
+          <img src="./img/how-it-works.png" alt="Vegetables in a basket" class="how__image" loading="lazy" decoding="async" />
+        </div>
+        <div class="how__content-wrap">
+          <div class="how__content">
+            <h2 class="sr-only">How it works</h2>
+            <p class="heading-md">
+              To order your <span>vegetable</span> basket, simply follow these <span>easy steps</span>
+            </p>
+            <p class="body-lg">
+              Our baskets are assembled with care and delivered straight to your doorstep, so you can enjoy the taste of
+              fresh fruit without ever leaving your home.
+            </p>
+            <ol class="steps" role="list">
+              <li>
+                <span>Just choose the <b>vegetable</b> you want to order by clicking on the checkboxes next to it.</span>
+              </li>
+              <li>
+                <span>Click on the <b>basket</b> and fill out the form.</span>
+              </li>
+              <li>
+                <span>Sit back and relax! Your fresh <b>vegetables</b> basket will be delivered.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-advertisement">
+      <!-- Advertisement -->
+      <section class="ad section-white" id="advertisement">
+        <div class="container">
+          <h2 class="sr-only">Advertisement</h2>
+          <p class="heading-xl ad__text">
+            <span class="ad__highlight">Discount up to 40%!</span><span class="ad__line">Taste the vitamins and keep your health</span>
+          </p>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-vegetables">
+      <!-- Vegetables -->
+      <section class="vegetables section-chianti" id="vegetables">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="heading-lg">Organic <span>vegetables</span></h2>
+            <p class="body-lg">
+              Our organic vegetables are hand-picked from local farms and delivered straight to your doorstep, ensuring
+              that you get the freshest and most nutritious produce possible.
+            </p>
+          </div>
+
+          <ul class="veg-grid" role="list">
+            <li class="veg-card">
+              <h3>Eggplant</h3>
+              <p>60 USD / kg</p>
+              <img src="./img/veg-eggplant.png" alt="Eggplant" loading="lazy" decoding="async" />
+            </li>
+            <li class="veg-card">
+              <h3>Leek</h3>
+              <p>50 USD / kg</p>
+              <img src="./img/veg-leek.png" alt="Leek" loading="lazy" decoding="async" />
+            </li>
+            <li class="veg-card">
+              <h3>Mushrooms</h3>
+              <p>40 USD / kg</p>
+              <img src="./img/veg-mushrooms.png" alt="Mushrooms" loading="lazy" decoding="async" />
+            </li>
+            <li class="veg-card">
+              <h3>Corn</h3>
+              <p>60 USD / kg</p>
+              <img src="./img/veg-corn.png" alt="Corn" loading="lazy" decoding="async" />
+            </li>
+            <li class="veg-card">
+              <h3>Sweet potatoes</h3>
+              <p>50 USD / kg</p>
+              <img src="./img/veg-sweet-potatoes.png" alt="Sweet potatoes" loading="lazy" decoding="async" />
+            </li>
+            <li class="veg-card">
+              <h3>Carrot</h3>
+              <p>40 USD / kg</p>
+              <img src="./img/veg-carrot.png" alt="Carrot" loading="lazy" decoding="async" />
+            </li>
+          </ul>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-review">
+      <!-- Reviews -->
+      <section class="reviews section-white" id="reviews">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="heading-lg">Reviews from our <span>customers</span></h2>
+            <p class="body-lg">
+              Words of our customers: impressions and opinions about the quality of our services and the freshness of our
+              products.
+            </p>
+          </div>
+
+          <ul class="review-grid" role="list">
+            <li class="review-card">
+              <img src="./img/review-john.png" alt="John Wax" loading="lazy" decoding="async" />
+              <h3>John Wax</h3>
+              <p>
+                These vegetables are my secret to delicious and healthy meals. The quality is always at the highest
+                level, the aroma and taste are enchanting. I advise every fan of real products!
+              </p>
+            </li>
+            <li class="review-card">
+              <img src="./img/review-victoria.png" alt="Victoria Romashenko" loading="lazy" decoding="async" />
+              <h3>Victoria Romashenko</h3>
+              <p>
+                I love how fast and fresh the vegetables are delivered. Salads always turn out so appetizing, and soups
+                are real masterpieces. The quality is impeccable!
+              </p>
+            </li>
+            <li class="review-card">
+              <img src="./img/review-ihor.png" alt="Ihor Trachuk" loading="lazy" decoding="async" />
+              <h3>Ihor Trachuk</h3>
+              <p>
+                Recently tried my fresh tomatoes and peppers - amazing! The authenticity of the taste, as if from the
+                garden directly to my table. It is now my main vegetable supplier.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-your-order">
+      <!-- Your order -->
+      <section class="order section-green" id="order">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="heading-lg">Fresh harvest box has got you <span>covered</span></h2>
+            <p class="body-lg">
+              Our boxes are packed with delicious, nutritious vegetables, perfect for anyone looking to eat healthier or
+              support local farmers. Order your box today and start enjoying the best that nature has to offer!
+            </p>
+          </div>
+
+          <div class="order__grid">
+            <div class="order-form">
+              <p class="heading-md order-form__title">
+                Ordering from us is quick and easy! Fill out the <span>form</span> below and we will contact you
+                <span>!</span>
+              </p>
+              <form class="order-form__fields">
+                <label>
+                  <input type="text" name="full_name" required placeholder="Full Name" />
+                </label>
+                <label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                    placeholder="Email"
+                  />
+                </label>
+                <label>
+                  <textarea rows="4" required placeholder="Comment"></textarea>
+                </label>
+                <button type="submit">Send</button>
+              </form>
+            </div>
+
+            <div class="order-social">
+              <img src="./img/order-social.png" alt="Vegetables and social media" loading="lazy" decoding="async" />
+              <p>Follow us on our social networks:</p>
+              <ul class="order-social__list" role="list">
+                <li><a href="https://www.instagram.com/goit.turkiye/" target="_blank" rel="noopener noreferrer">instagram</a></li>
+                <li><a href="https://www.facebook.com/people/GOIT-T%C3%BCrkiye/61558036560161/" target="_blank" rel="noopener noreferrer">facebook</a></li>
+                <li><a href="https://m.youtube.com/@GoITTurkey" target="_blank" rel="noopener noreferrer">youtube</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  </template>
+  <template id="tpl-footer">
+      <!-- Footer -->
+      <footer class="footer section-chianti" id="footer">
+        <div class="container">
+          <div class="footer__top">
+            <div class="footer__brand">
+              <a href="#" class="gh-logo" aria-label="Green Harvest home">
+                <img class="gh-logo__img gh-logo__img--desktop" src="./img/logo-desktop.svg" alt="Green Harvest" decoding="async" />
+                <img class="gh-logo__img gh-logo__img--mobile" src="./img/logo-mobile.svg" alt="Green Harvest" decoding="async" />
+              </a>
+              <p class="body-lg">Whether you're looking for a healthy snack or a thoughtful gift, our fruit baskets are the perfect choice.</p>
+            </div>
+
+            <nav aria-label="Footer navigation">
+              <ul class="footer__menu" role="list">
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#vegetables">Vegetables</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+              </ul>
+            </nav>
+
+            <div class="footer__contacts">
+              <a href="tel:+380684439426">+380 (68) 443-94-26</a>
+              <p>1678 S. Pioneer Road Salt Lake City UT 84104</p>
+            </div>
+          </div>
+
+          <div class="footer__bottom">
+            <p>Privacy Policy / Cookie settings</p>
+            <p>&copy;Green Harvest 2023</p>
+          </div>
+        </div>
+      </footer>
+  </template>
+
+  <script>
+    var PARTIAL_TEMPLATE_MAP = {
+      "./partials/header.html": "tpl-header",
+      "./partials/hero.html": "tpl-hero",
+      "./partials/how-is-works.html": "tpl-how-is-works",
+      "./partials/advertisement.html": "tpl-advertisement",
+      "./partials/vegetables.html": "tpl-vegetables",
+      "./partials/review.html": "tpl-review",
+      "./partials/your-order.html": "tpl-your-order",
+      "./partials/footer.html": "tpl-footer"
+    };
+
+    function initMenu() {
+      var header = document.getElementById("gh-header");
+      var openBtn = document.getElementById("gh-menu-open");
+      var closeTablet = document.getElementById("gh-menu-close-tablet");
+      var closeMobile = document.getElementById("gh-menu-close-mobile");
+      var backdrop = document.getElementById("gh-backdrop");
+      var tabletMenu = document.getElementById("gh-menu-tablet");
+      var mobileMenu = document.getElementById("gh-menu-mobile");
+      var navLinks = document.querySelectorAll('.gh-nav__item[href^="#"], .gh-cta[href^="#"]');
+
+      if (!header || !openBtn || !closeTablet || !closeMobile || !backdrop || !tabletMenu || !mobileMenu) return;
+
+      function isMobile() {
+        return window.matchMedia("(max-width: 767px)").matches;
+      }
+
+      function closeMenu() {
+        header.classList.remove("gh-header--tablet-open", "gh-header--mobile-open");
+        tabletMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        backdrop.hidden = true;
+        openBtn.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("gh-no-scroll");
+      }
+
+      function openMenu() {
+        var mobile = isMobile();
+        header.classList.toggle("gh-header--tablet-open", !mobile);
+        header.classList.toggle("gh-header--mobile-open", mobile);
+        tabletMenu.setAttribute("aria-hidden", String(mobile));
+        mobileMenu.setAttribute("aria-hidden", String(!mobile));
+        backdrop.hidden = mobile;
+        openBtn.setAttribute("aria-expanded", "true");
+        document.body.classList.add("gh-no-scroll");
+      }
+
+      openBtn.addEventListener("click", openMenu);
+      closeTablet.addEventListener("click", closeMenu);
+      closeMobile.addEventListener("click", closeMenu);
+      backdrop.addEventListener("click", closeMenu);
+      window.addEventListener("resize", closeMenu);
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          var targetId = this.getAttribute("href");
+          if (!targetId || targetId.charAt(0) !== "#") return;
+
+          var target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", targetId);
+        });
+      });
+    }
+
+    function injectFromTemplate(node, src) {
+      var templateId = PARTIAL_TEMPLATE_MAP[src];
+      if (!templateId) return;
+      var template = document.getElementById(templateId);
+      if (!template) return;
+      node.insertAdjacentHTML("afterend", template.innerHTML);
+      node.remove();
+    }
+
+    async function loadPartials() {
+      var nodes = document.querySelectorAll("load[src]");
+      for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        var src = node.getAttribute("src");
+        if (!src) continue;
+
+        try {
+          var response = await fetch(src);
+          if (!response.ok) throw new Error(src + " not loaded");
+          var html = await response.text();
+          node.insertAdjacentHTML("afterend", html);
+          node.remove();
+        } catch (error) {
+          injectFromTemplate(node, src);
+        }
+      }
+    }
+
+    (async function bootstrap() {
+      await loadPartials();
+      initMenu();
+    })();
+  </script>
+</body>
+
+</html>

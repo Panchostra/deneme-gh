@@ -1,0 +1,12 @@
+/* Desktop-first main stylesheet */
+@import "./header.css";
+@import "./base.css";
+@import "./hero.css";
+@import "./how-it-works.css";
+@import "./advertisement.css";
+@import "./vegetables.css";
+@import "./review.css";
+@import "./your-order.css";
+@import "./footer.css";
+@import "./tablet.css";
+@import "./mobile.css";

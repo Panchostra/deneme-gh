@@ -1,0 +1,32 @@
+/* Hero */
+.hero {
+  padding-top: 0;
+}
+
+.hero__inner {
+  min-height: 796px;
+  display: grid;
+  grid-template-columns: 1fr 640px;
+  align-items: start;
+  padding-right: 0;
+}
+
+.hero__content {
+  width: 504px;
+  padding-top: 232px;
+  padding-bottom: 52px;
+}
+
+.hero__content p {
+  margin-top: 128px;
+  max-width: 472px;
+}
+
+.hero__image {
+  width: 640px;
+  height: 796px;
+  background-image: linear-gradient(rgba(20, 20, 20, 0.2), rgba(20, 20, 20, 0.2)), url("../img/hero-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
